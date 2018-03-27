@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.diogo.calcbeer.dados"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Preço por litro"
+        android:textAlignment="center"
+        android:layout_margin="5dp"
+        android:textSize="18sp"/>
+    <com.jjoe64.graphview.GraphView
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:id="@+id/graph" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="1-Garrafa 300ml \n
+2-Long neck 330ml \n
+3-Lata 350ml \n
+4-Latão 473ml"
+        android:textAlignment="center"
+        android:layout_margin="5dp"
+        android:textSize="18sp"/>
+</LinearLayout>

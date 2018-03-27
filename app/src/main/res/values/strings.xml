@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">CalcBeer</string>
+    <string name="garrafa300ml">Garrafa 300ml</string>
+    <string name="longneck330ml">Long Neck 330ml</string>
+    <string name="lata350ml">Lata 350ml</string>
+    <string name="lata473ml">Lata 473ml</string>
+    <string name="calcular">Calcular</string>
+    <string name="precoporlitro">Preço por litro</string>
+
 </resources>

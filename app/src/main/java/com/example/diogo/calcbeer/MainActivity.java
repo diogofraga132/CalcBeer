@@ -1,7 +1,7 @@
 package com.example.diogo.calcbeer;
 
 import android.content.DialogInterface;
-import android.support.v4.media.MediaMetadataCompat;
+import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,7 +10,10 @@ import android.widget.Button;
 import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
+    public static float dados[]= new float[4];
+
     @Override
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -22,48 +25,57 @@ public class MainActivity extends AppCompatActivity {
         final EditText longneck = (EditText) findViewById(R.id.precoLongneck);
 
         Button calcular = (Button) findViewById(R.id.calcular);
-
+        
         calcular.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
                 try {
-                    double array[]= new double[4];
 
-                    double precoGarrafaMl = Double.valueOf(garrafa.getText().toString()) / 300;
-                    double precoLongneckMl = Double.valueOf(longneck.getText().toString()) / 330;
-                    double precoLataMl = Double.valueOf(Lata.getText().toString()) / 350;
-                    double precoLataoMl = Double.valueOf(Latao.getText().toString()) / 473;
+                    float precoGarrafaMl =  Float.valueOf(garrafa.getText().toString())/300*1000;
+                    float precoLongneckMl =  Float.valueOf(longneck.getText().toString())/330*1000 ;
+                    float precoLataMl =  Float.valueOf(Lata.getText().toString())/350*1000;
+                    float precoLataoMl =  Float.valueOf(Latao.getText().toString())/473*1000 ;
 
-
-                    array[0] = precoGarrafaMl;
-                    array[1] = precoLongneckMl;
-                    array[2] = precoLataMl;
-                    array[3] = precoLataoMl;
-                    double max = 0;
-                    for (int i=0; i>3;i++){
-
-                        if(array[i]>max){
-                            max=array[i];
+                    dados[0] = precoGarrafaMl;
+                    dados[1] = precoLongneckMl;
+                    dados[2] = precoLataMl;
+                    dados[3] = precoLataoMl;
+                    float min = dados[3];
+                    for (int i=0; i<4;i++){
+                        if(min> dados[i]){
+                            min= dados[i];
                         }
                     }
+                    if(min == dados[0]){
+                        alertDialog.setMessage("compre 300ml");
+                    }
+                    if(min == dados[1]){
+                        alertDialog.setMessage("compre Long neck 330ml");
+                    }
+                    if(min == dados[2]){
+                        alertDialog.setMessage("compre Lata 350ml");
+                    }
+                    if(min == dados[3]){
+                        alertDialog.setMessage("compre Latão 473ml");
+                    }
+                    //alertDialog.setMessage(Float.toString(min));
 
-                    if(max==precoGarrafaMl){
-                        alertDialog.setMessage(Double.toString(max));
-//                        alertDialog.setTitle("compre:");
-                      //  alertDialog.setMessage("Garrafa 300ml");
-                }
-                    else if (max==precoLongneckMl){
-                        alertDialog.setTitle("compre:");
-                        alertDialog.setMessage("Longneck 330ml");
-                    }
-                    else if(max==precoLataMl){
-                        alertDialog.setTitle("compre:");
-                        alertDialog.setMessage("Lata 350ml");
-                    }
-                    else{
-                        alertDialog.setTitle("compre:");
-                        alertDialog.setMessage("Latão 473ml");
-                    }
+                    alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "OK",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.dismiss();
+                                }
+                            });
+
+                    alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "Ver Dados",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int which) {
+                                            Intent intencao = new Intent(MainActivity.this, DadosActivity.class);
+                                            MainActivity.this.startActivity(intencao);
+
+                                    dialog.dismiss();
+                                }
+                            });
                     alertDialog.show();
 
                 }catch (Exception E){

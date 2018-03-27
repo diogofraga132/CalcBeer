@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">CalcBeer</string>
+    <string name="calcular">Calculate</string>
+    <string name="precoporlitro">price per liter</string>
+    <string name="longneck330ml">Long Neck 330ml</string>
+    <string name="lata350ml">Tin 350ml</string>
+    <string name="lata473ml">Tin 473ml</string>
+    <string name="garrafa300ml">Bottle 350ml</string>
+</resources>
