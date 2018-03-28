@@ -41,7 +41,7 @@ public class DadosActivity extends AppCompatActivity {
 // draw values on top
         series.setDrawValuesOnTop(true);
         series.setValuesOnTopColor(Color.RED);
-        series.setValuesOnTopSize(50);
+        series.setValuesOnTopSize(30);
 
     }
 }
