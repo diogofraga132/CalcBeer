@@ -6,5 +6,7 @@
     <string name="lata473ml">Lata 473ml</string>
     <string name="calcular">Calcular</string>
     <string name="precoporlitro">Preço por litro</string>
+    <string name="alertErroCampos">Preencha os campos corretamente e tente novamente</string>
+    <string name="alertTitleError">Erro</string>
 
 </resources>

@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
 
                 }catch (Exception E){
                     alertDialog.setTitle("Erro:");
-                    alertDialog.setMessage("Preencha os campos corretamente e tente novamente!");
+                    alertDialog.setMessage("Preencha os campos corretamente e tente novamente");
                     alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
                             new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int which) {
